@@ -1,6 +1,7 @@
 require("dotenv").config()
 const express = require("express")
 const app = express()
+app.set("view engine", "ejs")
 console.log(process.env.PORT)
 app.listen(process.env.PORT, ()=>{console.log("http://Localhost:"+process.env.PORT)})
-app.get("/",(req, res)=>{res.send("Hallo Alfred")})
+app.get("/",(req, res)=>{res.render("accueil")})
